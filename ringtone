@@ -1,0 +1,25 @@
+from earsketch import *
+
+init()
+setTempo(150)
+a = "0--000-----0000"
+
+
+
+def myFunction(startMeasure, endMeasure):
+  fitMedia(DUBSTEP_LEAD_014, 1, startMeasure, endMeasure)
+  fitMedia(RD_TRAP_DRUM_PART_20, 2, startMeasure, endMeasure)
+
+
+setEffect(1, DELAY, DELAY_TIME, 400)
+for i in range(1, 34):
+  makeBeat(CIARA_SET_KICK_2, 3, i, a)
+
+
+myFunction(1,34)
+
+finish()
+
+
+
+
