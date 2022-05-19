@@ -31,7 +31,7 @@ void loop() // Main loop auto-repeats
  }
  else // Otherwise, no IR detects
  {
- maneuver(-35, -35, 20); // Forward 20 ms
+ maneuver(-35, 35, 20); // Forward 20 ms
  }
 }
 int irDetect(int irLedPin, int irReceiverPin, long frequency)
