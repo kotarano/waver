@@ -1,0 +1,10 @@
+pet = input("What pet do you have? ")
+
+if(pet != "rock"):
+    count = 1
+    print("You have a " + pet + " with a total of " + str(count) + " pet(s)")
+while(pet != "rock"):
+    pet = input("What pet do you have? ")
+    count = count + 1
+    if(pet != "rock"):
+        print("You have a " + pet + " with a total of " + str(count) + " pet(s)")
