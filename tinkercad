@@ -1,0 +1,18 @@
+#include <Servo.h>
+Servo myServo;
+int potPin = 0;
+int potValue = 0;
+
+void setup() {
+	myServo.attach(5);
+    pinMode(potPin, INPUT);
+  
+}
+
+void loop() {
+    potValue = analogRead(potPin);
+    potValue = map(potValue, 0, 1023, 0, 180);
+    myServo.write(potValue);
+    delay(15);
+}
+
