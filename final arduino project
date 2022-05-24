@@ -1,0 +1,45 @@
+#include <Servo.h>
+Servo servo ;
+int topLDR = 0;
+int bottomLDR = 1;
+int top = 0;
+int bottom = 0;
+int error = 0;
+//int calibration = 600;
+int servoposition=90;
+
+void setup(){
+  pinMode(topLDR,INPUT);
+  pinMode(bottomLDR,INPUT);
+  servo.attach(10);
+  Serial.begin(9600);
+}
+
+void loop(){
+  top = analogRead(topLDR);
+  bottom = analogRead(bottomLDR);
+  Serial.print("top: ");
+  Serial.println(top);
+  Serial.print("bottom: ");
+  Serial.println(bottom);
+  Serial.print("servo: ");
+  Serial.println(servoposition);
+  delay(500);
+  
+  if(top-20>bottom && servoposition<=180){
+    servoposition=servoposition+10;
+    servo.write(servoposition);
+    delay(500);
+  }
+  else if(bottom-15>top&& servoposition>=0){
+    servoposition=servoposition-10;
+    servo.write(servoposition);
+    delay(500);
+  }
+  else{
+    servoposition==0;
+    servo.write(servoposition);
+    delay(500);
+  }
+}
+
